@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'apps.Empresa',
     'apps.Evaluacion',
     'apps.PlanMejoramiento',
+    'apps.Usuario',
 ]
 
 MIDDLEWARE = [
@@ -80,7 +81,7 @@ WSGI_APPLICATION = 'apolo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'prueba',
+        'NAME': 'apolo',
         'USER': 'postgres',
         'PASSWORD': 'camilo0210',
         'HOST': 'localhost',
@@ -128,3 +129,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
+
+AUTH_USER_MODEL = 'Usuario.Persona'

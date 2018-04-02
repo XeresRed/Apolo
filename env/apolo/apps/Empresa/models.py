@@ -6,11 +6,11 @@ class Empresa(models.Model):
     SECTOR_CHOICES = (
         ("Industrial", "Industria"),
         ("Servicios", "Servicio"),
-        ("Comercio", "Comercio"),
+        ("Comercios", "Comercio"),
     )
     NIT = models.CharField(primary_key=True, max_length=60)
     Nombre_empresa = models.CharField(blank=True, max_length=100)
-    Sector = models.CharField(max_length=25,choices=SECTOR_CHOICES,default=Comercio)
+    Sector = models.CharField(max_length=25,choices=SECTOR_CHOICES,default="Comercio")
     Activos = models.CharField(blank=True, max_length=12)
     Numero_empleados = models.CharField(blank=True, max_length=100)
     usuario = models.OneToOneField(Persona,on_delete=models.CASCADE)
